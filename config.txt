@@ -1,0 +1,11 @@
+Feed Rate:
+
+    feed rate = 200 * n / 1.5 (n - number of microsteps)
+
+    for 2 microsteps:
+
+    $100=266.66666667
+    $101=266.66666667
+    $102=266.66666667
+
+    See also http://www.micromo.com/microstepping-myths-and-realities
