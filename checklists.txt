@@ -1,0 +1,9 @@
+Before Milling
+--------------
+- machine power source different than stepper motor controller power source
+- active Z-axis *unblocked*
+- non-active Z-axis blocked
+
+After Milling
+-------------
+- machine power source off
