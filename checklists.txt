@@ -3,6 +3,10 @@ Before Milling
 - machine power source different than stepper motor controller power source
 - active Z-axis *unblocked*
 - non-active Z-axis blocked
+- no parts extending outside of north of milling table (to not hit the
+  column)
+- screen between workpiece and column (to minimize amount if chips falling
+  between milling table and column)
 
 After Milling
 -------------
