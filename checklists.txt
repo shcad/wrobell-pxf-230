@@ -7,7 +7,9 @@ Before Milling
   column)
 - screen between workpiece and column (to minimize amount of chips falling
   between milling table and column)
+- do fast movement on X-axis and Y-axis to detect any movement problems
 
 After Milling
 -------------
 - machine power source off
+- cnc driver power source off
