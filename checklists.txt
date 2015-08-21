@@ -5,7 +5,7 @@ Before Milling
 - non-active Z-axis blocked
 - no parts extending outside of north of milling table (to not hit the
   column)
-- screen between workpiece and column (to minimize amount if chips falling
+- screen between workpiece and column (to minimize amount of chips falling
   between milling table and column)
 
 After Milling
