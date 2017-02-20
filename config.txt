@@ -1,3 +1,5 @@
+For GRBL 1.1.
+
 Feed Rate:
 
     feed rate = 200 * n / 1.5 (n - number of microsteps)
@@ -9,3 +11,9 @@ Feed Rate:
     $102=266.66666667
 
     See also http://www.micromo.com/microstepping-myths-and-realities
+
+Direction port invert:
+
+    Y-axis and Z-axis inverted
+
+    $3=6
