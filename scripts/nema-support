@@ -1,0 +1,59 @@
+#!/usr/bin/env python
+#
+# pxf-230 - Proxxon FF 230 milling machine converstion to CNC
+#
+# Copyright (C) 2014-2017 by Artur Wroblewski <wrobell@riseup.net>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+import logging
+
+import dcad.render
+import dcad.gcode as gc
+from dcad.align import *
+from dcad.shape import *
+from dcad.tool import Tool, ToolContext
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger('pxf-230.nema')
+
+width = 47.14
+centre = 32
+screw = 5.1  # M5
+frame_width = width + screw
+
+# 550 spindle speed, bit of chatter due to not secured z-axis well
+with ToolContext(Tool(4, 1), 160) as ctx:
+    dx = (centre - ctx.tool.diameter) / 2
+    ctx.cut_depth = 0.1
+    ctx.plunge_rate = 10
+    t = dcad.render.gcode([
+        gc.relative(),
+        gc.comment('centre'),
+        Bore(centre, 5)
+    ])
+    print(t)
+
+    dx = (screw - ctx.tool.diameter) / 2
+    b = Bore(screw, 4)
+    frame = FrameOf(b, 2, 2, frame_width, frame_width)
+    t = dcad.render.gcode([
+        gc.comment('screws'),
+        frame,
+        gc.home(),
+    ])
+    print(t)
+
+# vim: sw=4:et:ai
