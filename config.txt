@@ -2,13 +2,14 @@ For GRBL 1.1.
 
 Feed Rate:
 
-    feed rate = 200 * n / 1.5 (n - number of microsteps)
+    feed rate = 200 * n / 1.5 (n - number of microsteps) (axes: x, y)
+                200 * n / 1.0 (n - number of microsteps) (axis z)
 
     for 2 microsteps:
 
     $100=266.66666667
     $101=266.66666667
-    $102=266.66666667
+    $102=400
 
     See also http://www.micromo.com/microstepping-myths-and-realities
 
